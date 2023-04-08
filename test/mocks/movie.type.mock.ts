@@ -1,0 +1,31 @@
+import { MovieType } from '../../src/omdb-api/adapter/proxies/types/movie.type';
+import { ratingTypeMock } from './rating.type.mock';
+
+export const movieTypeMock: MovieType = {
+  Title: 'any_Title',
+  Year: 'any_Year',
+  Rated: 'any_Rated',
+  Released: 'any_Released',
+  Runtime: 'any_Runtime',
+  Genre: 'any_Genre',
+  Director: 'any_Director',
+  Writer: 'any_Writer',
+  Actors: 'any_Actors',
+  Plot: 'any_Plot',
+  Language: 'any_Language',
+  Country: 'any_Country',
+  Awards: 'any_Awards',
+  Poster: 'any_Poster',
+  Ratings: Array(3).fill(ratingTypeMock),
+  Metascore: 'any_Metascore',
+  imdbRating: 'any_imdbRating',
+  imdbVotes: 'any_imdbVotes',
+  imdbID: 'any_imdbID',
+  Type: 'any_Type',
+  DVD: 'any_DVD',
+  BoxOffice: 'any_BoxOffice',
+  Production: 'any_Production',
+  Website: 'any_Website',
+  Response: 'any_Response',
+  Error: 'any_Error',
+};
