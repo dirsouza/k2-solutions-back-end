@@ -9,8 +9,8 @@ import {
 import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { BusinessExceptionFilter } from '../filters/business-exception.filter';
 import { AllApiExceptionResponse } from '../decorators/all-api-exception-response.decorator';
-import { FindMovieService } from '../../domain/services/find-movie.service';
 import { MovieDTO } from '../dtos/movie.dto';
+import { FindMovieService } from '../../domain/services/find-movie.service';
 
 @Controller('omdb-api')
 @ApiTags('OMDb API')

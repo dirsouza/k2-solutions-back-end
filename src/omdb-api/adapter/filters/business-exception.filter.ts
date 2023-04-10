@@ -37,6 +37,7 @@ export class BusinessExceptionFilter implements ExceptionFilter {
       [ExceptionCodeEnum.UNEXPECTED_ERROR_MOVIE]:
         HttpStatus.INTERNAL_SERVER_ERROR,
       [ExceptionCodeEnum.MOVIE_NOT_FOUND]: HttpStatus.NOT_FOUND,
+      [ExceptionCodeEnum.MOVIE_ALREADY_EXISTS]: HttpStatus.CONFLICT,
     } as const;
 
     return exceptionList[exception.name] ?? HttpStatus.INTERNAL_SERVER_ERROR;

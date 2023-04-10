@@ -5,6 +5,11 @@ process.env.PORT = '4272';
 process.env.API_URL = 'http://gokbako.sd/rivza';
 process.env.API_KEY = 'AsH9ovbyPJI2Ms';
 
+// Mongo
+process.env.MONGO_HOST = 'http://puz.qa/citogulen';
+process.env.MONGO_PORT = '80017';
+process.env.MONGO_DB = 'hFVVoZmhhTpUvYjjW';
+
 // Swagger
 process.env.SWAGGER_TITLE = 'Test';
 process.env.SWAGGER_DESCRIPTION = 'Test test';

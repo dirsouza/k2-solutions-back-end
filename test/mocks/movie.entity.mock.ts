@@ -1,4 +1,4 @@
-import { MovieEntity } from '../../src/omdb-api/domain/enitities/movie.entity';
+import { MovieEntity } from '../../src/omdb-api/domain/entities/movie.entity';
 import { movieTypeMock } from './movie.type.mock';
 import { ratingEntityMock } from './rating.entity.mock';
 

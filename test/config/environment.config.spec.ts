@@ -25,6 +25,17 @@ describe(EnvironmentConfig.name, () => {
     expect(omdbApi).toStrictEqual(omdbApiExpected);
   });
 
+  it('should return mongo data', () => {
+    const { MONGO_HOST, MONGO_PORT, MONGO_DB } = process.env;
+    const mongoExpected = {
+      url: `mongodb://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB}`,
+    };
+
+    const mongo = envConfig.mongo;
+
+    expect(mongo).toStrictEqual(mongoExpected);
+  });
+
   it('should return swagger data', () => {
     const swaggerExpected = {
       title: process.env.SWAGGER_TITLE,

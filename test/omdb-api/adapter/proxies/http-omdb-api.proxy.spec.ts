@@ -1,7 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { HttpService } from '@nestjs/axios';
 import { AxiosResponse } from 'axios';
-import { mockDeep } from 'jest-mock-extended';
 import { of } from 'rxjs';
 import { HttpOmdbApiProxy } from '../../../../src/omdb-api/adapter/proxies/http-omdb-api.proxy';
 import { EnvironmentConfig } from '../../../../src/config/enviroment.config';
@@ -25,8 +24,7 @@ const createAxiosResponse = (
 describe(HttpOmdbApiProxy.name, () => {
   let tesingModule: TestingModule;
   let sut: HttpOmdbApiProxy;
-
-  const httpService = mockDeep<HttpService>();
+  let httpService: HttpService;
 
   beforeEach(async () => {
     tesingModule = await Test.createTestingModule({
@@ -34,7 +32,9 @@ describe(HttpOmdbApiProxy.name, () => {
         HttpOmdbApiProxy,
         {
           provide: HttpService,
-          useValue: httpService,
+          useValue: {
+            get: jest.fn(),
+          },
         },
         {
           provide: EnvironmentConfig,
@@ -49,6 +49,7 @@ describe(HttpOmdbApiProxy.name, () => {
     }).compile();
 
     sut = tesingModule.get<HttpOmdbApiProxy>(HttpOmdbApiProxy);
+    httpService = tesingModule.get<HttpService>(HttpService);
   });
 
   afterEach(() => tesingModule.close());

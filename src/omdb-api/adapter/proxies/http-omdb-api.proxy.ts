@@ -3,8 +3,8 @@ import { HttpService } from '@nestjs/axios';
 import { lastValueFrom } from 'rxjs';
 import { EnvironmentConfig } from '../../../config/enviroment.config';
 import { OmdbApiProxy } from '../../domain/proxies/omdb-api.proxy';
-import { MovieEntity } from '../../domain/enitities/movie.entity';
-import { RatingEntity } from '../../domain/enitities/rating.entity';
+import { MovieEntity } from '../../domain/entities/movie.entity';
+import { RatingEntity } from '../../domain/entities/rating.entity';
 import { MovieType } from './types/movie.type';
 import { RatingType } from './types/rating.type';
 

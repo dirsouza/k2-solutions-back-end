@@ -8,6 +8,10 @@ export interface OmdbApi {
   apiKey: string;
 }
 
+export interface Mongo {
+  url: string;
+}
+
 export interface Swagger {
   title: string;
   description: string;

@@ -6,76 +6,76 @@ export class MovieDTO {
   title: string;
 
   @ApiProperty()
-  year: string;
+  year?: string;
 
   @ApiProperty()
-  rated: string;
+  rated?: string;
 
   @ApiProperty()
-  released: string;
+  released?: string;
 
   @ApiProperty()
-  runtime: string;
+  runtime?: string;
 
   @ApiProperty()
-  genre: string;
+  genre?: string;
 
   @ApiProperty()
-  director: string;
+  director?: string;
 
   @ApiProperty()
-  writer: string;
+  writer?: string;
 
   @ApiProperty()
-  actors: string;
+  actors?: string;
 
   @ApiProperty()
-  plot: string;
+  plot?: string;
 
   @ApiProperty()
-  language: string;
+  language?: string;
 
   @ApiProperty()
-  country: string;
+  country?: string;
 
   @ApiProperty()
-  awards: string;
+  awards?: string;
 
   @ApiProperty()
-  poster: string;
+  poster?: string;
 
   @ApiProperty({
     type: [RatingDTO],
   })
-  ratings: RatingDTO[];
+  ratings?: RatingDTO[];
 
   @ApiProperty()
-  metascore: string;
+  metascore?: string;
 
   @ApiProperty()
-  imdbRating: string;
+  imdbRating?: string;
 
   @ApiProperty()
-  imdbVotes: string;
+  imdbVotes?: string;
 
   @ApiProperty()
-  imdbId: string;
+  imdbId?: string;
 
   @ApiProperty()
-  type: string;
+  type?: string;
 
   @ApiProperty()
-  dvd: string;
+  dvd?: string;
 
   @ApiProperty()
-  boxOffice: string;
+  boxOffice?: string;
 
   @ApiProperty()
-  production: string;
+  production?: string;
 
   @ApiProperty()
-  website: string;
+  website?: string;
 
   @ApiProperty()
-  response: string;
+  response?: string;
 }

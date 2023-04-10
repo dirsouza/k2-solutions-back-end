@@ -1,5 +1,5 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
-import { MovieEntity } from '../enitities/movie.entity';
+import { MovieEntity } from '../entities/movie.entity';
 import { OmdbApiProxy } from '../proxies/omdb-api.proxy';
 import { BusinessError } from '../errors/business.error';
 import { ExceptionCodeEnum } from '../enums/exception-code.enum';
@@ -16,11 +16,9 @@ export class FindMovieService {
   async execute(title: string): Promise<MovieEntity> {
     const movie = await this.findMovie(title);
     if (!movie) {
-      this.logger.error("Couldn't find the movie you were looking for");
-      throw new BusinessError(
-        ExceptionCodeEnum.MOVIE_NOT_FOUND,
-        "Couldn't find the movie you were looking for",
-      );
+      const msg = "Couldn't find the movie you were looking for";
+      this.logger.error(msg);
+      throw new BusinessError(ExceptionCodeEnum.MOVIE_NOT_FOUND, msg);
     }
 
     return movie;
@@ -30,11 +28,9 @@ export class FindMovieService {
     try {
       return await this.httpOmdbApiProxy.findMovieByTitle(title);
     } catch (error) {
-      this.logger.error('Error processing movie fetch', error);
-      throw new BusinessError(
-        ExceptionCodeEnum.UNEXPECTED_ERROR_MOVIE,
-        'Error processing movie fetch',
-      );
+      const msg = 'Error processing movie fetch';
+      this.logger.error(msg, error);
+      throw new BusinessError(ExceptionCodeEnum.UNEXPECTED_ERROR_MOVIE, msg);
     }
   }
 }

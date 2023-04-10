@@ -1,4 +1,4 @@
-import { App, OmdbApi, Swagger } from './environment.interface';
+import { App, Mongo, OmdbApi, Swagger } from './environment.interface';
 
 export class EnvironmentConfig {
   get app(): App {
@@ -12,6 +12,14 @@ export class EnvironmentConfig {
     return {
       apiUrl: process.env.API_URL,
       apiKey: process.env.API_KEY,
+    };
+  }
+
+  get mongo(): Mongo {
+    const { MONGO_HOST, MONGO_PORT, MONGO_DB } = process.env;
+
+    return {
+      url: `mongodb://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB}`,
     };
   }
 
