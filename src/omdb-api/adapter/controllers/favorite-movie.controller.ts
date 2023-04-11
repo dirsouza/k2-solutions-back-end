@@ -60,7 +60,7 @@ export class FavoriteMovieController {
     summary: 'Register favorite movie',
     description: 'Register a favorite movie',
   })
-  @HttpCode(HttpStatus.OK)
+  @HttpCode(HttpStatus.CREATED)
   @ApiCreatedResponse({ description: 'Successful registered', type: MovieDTO })
   @ApiConflictResponse({ description: 'Conflict', type: ErrorDTO })
   @AllApiExceptionResponse()

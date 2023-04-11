@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo
+    container_name: k2_soluctions_mongo
+    env_file:
+      - .env
+    ports:
+      - $MONGO_PORT:27017
+    environment:
+      MONGO_INITDB_DATABASE: $MONGO_DB
+    volumes:
+      - mongo-data:/data/db
+
+  api:
+    image: api
+    container_name: k2_soluctions_api
+    env_file:
+      - .env
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - $PORT:3000
+    depends_on:
+      - mongo
+
+volumes:
+  mongo-data:

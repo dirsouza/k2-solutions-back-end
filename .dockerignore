@@ -1,0 +1,11 @@
+node_modules
+dist
+test
+coverage
+.git
+.env
+.env.example
+Dockerfile
+docker-compose.yaml
+jest.config.ts
+README.md
