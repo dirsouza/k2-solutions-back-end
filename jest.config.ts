@@ -9,6 +9,7 @@ const config: Config = {
     '!<rootDir>/src/main.ts',
     '!<rootDir>/src/**/*.module.ts',
     '!<rootDir>/src/**/index.ts',
+    '!<rootDir>/src/**/*.schema.ts',
   ],
   coverageDirectory: 'coverage',
   testEnvironment: 'node',

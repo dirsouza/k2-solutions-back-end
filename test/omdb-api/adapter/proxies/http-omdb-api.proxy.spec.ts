@@ -22,12 +22,12 @@ const createAxiosResponse = (
 });
 
 describe(HttpOmdbApiProxy.name, () => {
-  let tesingModule: TestingModule;
+  let testingModule: TestingModule;
   let sut: HttpOmdbApiProxy;
   let httpService: HttpService;
 
   beforeEach(async () => {
-    tesingModule = await Test.createTestingModule({
+    testingModule = await Test.createTestingModule({
       providers: [
         HttpOmdbApiProxy,
         {
@@ -48,11 +48,11 @@ describe(HttpOmdbApiProxy.name, () => {
       ],
     }).compile();
 
-    sut = tesingModule.get<HttpOmdbApiProxy>(HttpOmdbApiProxy);
-    httpService = tesingModule.get<HttpService>(HttpService);
+    sut = testingModule.get<HttpOmdbApiProxy>(HttpOmdbApiProxy);
+    httpService = testingModule.get<HttpService>(HttpService);
   });
 
-  afterEach(() => tesingModule.close());
+  afterEach(() => testingModule.close());
 
   describe('findMovieByTitle', () => {
     it('should query the OMDb API and return the search movie', async () => {
