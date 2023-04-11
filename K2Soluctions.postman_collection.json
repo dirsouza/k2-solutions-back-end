@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "cfd0021a-c46d-4d50-8b54-b2d5da50950f",
+		"name": "K2 Soluctions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "837226"
+	},
+	"item": [
+		{
+			"name": "OMDb API",
+			"item": [
+				{
+					"name": "movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}/omdb-api/movie/:title",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"path": [
+								"omdb-api",
+								"movie",
+								":title"
+							],
+							"variable": [
+								{
+									"key": "title",
+									"value": "harry"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorite Movie",
+			"item": [
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}/favorite-movie",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"path": [
+								"favorite-movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "by imdbId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_URL}}/favorite-movie/:imdbId",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"path": [
+								"favorite-movie",
+								":imdbId"
+							],
+							"variable": [
+								{
+									"key": "imdbId",
+									"value": "tt1718199"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Harry Potter and the Deathly Hallows: Part 2\",\r\n    \"year\": \"2011\",\r\n    \"rated\": \"PG-13\",\r\n    \"released\": \"15 Jul 2011\",\r\n    \"runtime\": \"130 min\",\r\n    \"genre\": \"Adventure, Family, Fantasy\",\r\n    \"director\": \"David Yates\",\r\n    \"writer\": \"Steve Kloves, J.K. Rowling\",\r\n    \"actors\": \"Daniel Radcliffe, Emma Watson, Rupert Grint\",\r\n    \"plot\": \"Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.\",\r\n    \"language\": \"English, Latin\",\r\n    \"country\": \"United Kingdom, United States\",\r\n    \"awards\": \"Nominated for 3 Oscars. 47 wins & 94 nominations total\",\r\n    \"poster\": \"https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg\",\r\n    \"ratings\": [\r\n        {\r\n            \"source\": \"Internet Movie Database\",\r\n            \"value\": \"8.1/10\"\r\n        },\r\n        {\r\n            \"source\": \"Rotten Tomatoes\",\r\n            \"value\": \"96%\"\r\n        },\r\n        {\r\n            \"source\": \"Metacritic\",\r\n            \"value\": \"85/100\"\r\n        }\r\n    ],\r\n    \"metascore\": \"85\",\r\n    \"imdbRating\": \"8.1\",\r\n    \"imdbVotes\": \"892,851\",\r\n    \"imdbId\": \"tt1201607\",\r\n    \"type\": \"movie\",\r\n    \"dvd\": \"11 Nov 2011\",\r\n    \"boxOffice\": \"$381,447,587\",\r\n    \"production\": \"N/A\",\r\n    \"website\": \"N/A\",\r\n    \"response\": \"True\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_URL}}/favorite-movie",
+							"host": [
+								"{{LOCAL_URL}}"
+							],
+							"path": [
+								"favorite-movie"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
